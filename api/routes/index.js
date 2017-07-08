@@ -11,10 +11,14 @@ router
 .route('/hotels/:hotelId')
 .get(ctrlHotels.hotelsGetOne);
 
+router
+.route('/hotels/new')
+.post(ctrlHotels.hotelsAddOne);
 // .post(function(req, res){
 //     console.log('POST the json');
 //     res
 //     .status(200)
 //     .json({"jsonData": 'post received'});
 // });
+
 module.exports = router;
