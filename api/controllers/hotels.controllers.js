@@ -1,6 +1,8 @@
-var dbconn = require('../data/dbconnection.js');
-var ObjectId = require('mongodb').ObjectId;
-var hotelData = require('../data/hotel-data.json');
+// var dbconn = require('../data/dbconnection.js');
+// var ObjectId = require('mongodb').ObjectId;
+// var hotelData = require('../data/hotel-data.json');
+
+
 
 module.exports.hotelsGetAll = function(req, res){
 
