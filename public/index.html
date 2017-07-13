@@ -1,29 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="meanhotel">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mean Hotel</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/custom.css" rel="stylesheet" />
+    <title>MEAN Hotel</title>
 </head>
 <body>
-    <h1>Mean Hotel</p>
+
+    <div ng-view></div>
+
     <footer class="footer">
         <div class="container">
             <p class="text-muted text-center">
-                <a href="google.com" target="_blank">
+                <a href="http://linkedin.com" target="_blank">
                     <img src="images/logo.png" height="26" alt="logo image here"/>
                 </a>
             </p>
             <p class="text-muted text-center">
-                <small>&copy; built with</small>
+                <small>&copy; copyrights</small>
             </p>
         </div>
     </footer>
 
     <script src="jquery/jquery-2.1.4.min.js"></script>
-    <p>welcome to mean hotel</p>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="angular-app/app.js"></script>
+    
 </body>
 </html>
