@@ -1,7 +1,15 @@
-<h1>Looking at {{vm.hotel.name}}</h1>
+<h1>Looking at {{vm.hotel.name}} - {{vm.stars}}</h1>
 
 <p><small>{{vm.hotel.location.address}}</small></p>
 
 <p>{{vm.hotel.description}}</p>
 
 <p>This Hotel has the following amenities</p>
+<ul>
+    <li ng-repeat="service in vm.hotel.services">{{service}}</li>
+</ul>
+
+<h3>Reviews</h3>
+<ul>
+    <li ng-repeat="review in vm.hotel.reviews"><strong>{{review.name}} says:</strong> {{review.review}}</li>
+</ul>
