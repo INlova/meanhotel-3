@@ -3,6 +3,7 @@ var router = express.Router();
 
 var ctrlHotels = require('../controllers/hotels.controllers.js');
 var ctrlReviews = require('../controllers/reviews.controllers.js');
+var ctrlUsers = require('../controllers/users.controllers');
 
 router
 .route('/hotels')
@@ -34,5 +35,13 @@ router
 .get(ctrlReviews.reviewsGetOne)
 .put(ctrlReviews.reviewsUpdateOne)
 .delete(ctrlReviews.reviewsDeleteOne);
+
+router
+.route('/users/register')
+.post(ctrlUsers.register);
+
+router
+.route('/users/login')
+.post(ctrlUsers.login);
 
 module.exports = router;

@@ -37,3 +37,4 @@ process.once('SIGUSR2', function(){
 });
 
 require('./hotel.models.js');
+require('./users.model.js');
