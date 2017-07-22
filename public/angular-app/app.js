@@ -1,4 +1,4 @@
-angular.module('meanhotel', ['ngRoute']).config(config).run(run);
+angular.module('meanhotel', ['ngRoute', 'angular-jwt']).config(config).run(run);
 // .config('HotelsController', HotelsController);
 function config($httpProvider, $routeProvider,$locationProvider) {
     $locationProvider.hashPrefix('');
@@ -52,6 +52,7 @@ function config($httpProvider, $routeProvider,$locationProvider) {
 // }
 function run($rootScope, $location, $window, AuthFactory){
     $rootScope.$on('$rootChangeStart', function(event, nextRoute, currentRoute){
+        // console.log(nextRoute.access !== undefined, nextRoute.access.restricted, !$window.sessionStorage.token, !AuthFactory.isLoggedIn);
         if (nextRoute.access !== undefined && nextRoute.access.restricted && !$window.sessionStorage.token && !AuthFactory.isLoggedIn){
             event.preventDefault();
             $location.path('/');
