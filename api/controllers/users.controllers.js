@@ -67,7 +67,7 @@ module.exports.authenticate = function(req, res, next){
         var token = req.headers.authorization.split(' ')[1];
         jwt.verify(token, 's3cr3t', function(err, decode){
             if (err){
-                console.log('auth failed');
+                console.log(err);
                 res
                 .status(401)
                 .json('auth failed');
