@@ -13,7 +13,8 @@
             <ul class="nav navbar-nav">
                 <li ng-class="vm.isActiveTab('')" class="active"><a href="#/">Home</a></li>
                 <li ng-class="vm.isActiveTab('hotels')"><a href="#/hotels">Hotels</a></li>
-                <li ng-class="vm.isActiveTab('register')"><a href="#/register">Register</a></li>
+                <li ng-class="vm.isActiveTab('register')" ng-if="!vm.isLoggedin()"><a href="#/register">Register</a></li>
+                <li ng-class="vm.isActiveTab('register')" ng-if="vm.isLoggedin()"><a href="#/profile">Profile</a></li>
             </ul>
             <form ng-if="!vm.isLoggedin()" class="navbar-form navbar-right" role="login" ng-submit="vm.login()">
                 <div class="form-group" ng-class="{'has-error': vm.errors}">
@@ -24,7 +25,7 @@
                 </div>
                 <button type="submit" class="btn btn-sm btn-success">Login</button>
             </form>
-            <ul ng-if="vm.isLoggedIn()" class="nav navbar-nav navbar-right">
+            <ul ng-if="vm.isLoggedin()" class="nav navbar-nav navbar-right">
                 <li><p class="navbar-text">Welcome back {{vm.loggedinUser}}</p></li>
                 <li><button class="navbar-btn btn-sm btn-info" ng-click="vm.logout()">Logout</button></li>
             </ul>
