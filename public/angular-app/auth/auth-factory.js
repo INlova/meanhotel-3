@@ -1,12 +1,12 @@
 angular.module('meanhotel').factory('AuthFactory', AuthFactory);
 
 function AuthFactory() {
-        return{
+
+    return{
         auth: auth
     };
-    var auth = {
+
+        var auth = {
         isLoggedIn: false
     };
-
-
-}
+};

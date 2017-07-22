@@ -4,7 +4,7 @@ function LoginController($http, $location, $window, AuthFactory, jwtHelper){
     var vm = this;
 
     vm.isLoggedin = function(){
-        if (AuthFactory.isLoggedIn){
+        if (AuthFactory.auth){
             return true;
         }else{
             return false;
